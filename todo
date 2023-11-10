@@ -24,21 +24,20 @@ Apple ii graphics experiments
 
 
 Do something to play around with double low-res? (I guess that’s only 80 x 48, but it’s better than low-low res)
+> Garrett's CHIP-8 project seems like the perfect fit for this!
 
 Explore double hi res. Supposedly this gives us access to the full 16-color palette. (Q: does it change the number of distinct visible pixels, compared to normal hi res? Unclear so far, but sounds like yes? Except they mention a sliding(?) window which is odd…)
 
 
 
-Other ideas:
+More ideas:
 * maze generator
-    * seems like there's wall glyphs!
+    * ~~seems like there's wall glyphs!~~
     * https://en.wikipedia.org/wiki/Apple_II_character_set
         UPDATE: haha just kidding, this wiki page is completely wrong
         See: https://retrocomputing.stackexchange.com/questions/8652
 * game of life but with ghosts (multi-color!)
 * rc logo bit.ly/2P0qu6N
-* wordle (credit sengmin for the idea)
-    * word//e ?
 (these ones might be easier in rust):
 * footsies
 * chess
@@ -48,7 +47,21 @@ Other ideas:
 * pokemon sokoban (can we do hi-res greyscale if we use a monochrome display?)
 * snakes and ladders
 * Typeracer / some kind of typing test
+
+Ok now that we have Rust running, but no libc, let's start small again:
+
 * 2048
+    could probably use inverse/etc text to good advantage here as well
+    todo: design the overall UI / UX of this.
+
+* word//e (credit sengmin for the idea)
+  * some UI questions about this
+    * how many "colors" will we need? Is normal, inverse, flashing enough?
+    * we'll need a word bank for this I think... will it fit into RAM?
+        Will lookups be fast enough??
+        (trie data structure??)
+
+
 
 Existing projects to save to floppies:
 * snake
