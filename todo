@@ -1,13 +1,13 @@
     done:
 guessing-game
+sokoban-c
 
     now:
-[ ] sokoban-c
+tron
 
     future:
-tron
-ghosts
 maze
+ghosts
 pumpkins
 
 ---
@@ -58,6 +58,17 @@ pumpkins
 > could be pretty nice.
 > This would require getting hi-res graphics working, and could be a cool
 > target project to motivate that.
+
+Audio recording on iPhone
+
+C docs
+* flesh these out at some point
+* include example programs from 2e/c ?
+    * these are nice stepping stones / tutorials, in a way
+
+Floppy docs
+
+Physical floppies
 
 Apple LOGO ?
 
