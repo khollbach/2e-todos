@@ -1,5 +1,7 @@
     done:
-guessing game
+
+    now:
+[ ] guessing game
 sokoban C
 
     future:
@@ -28,7 +30,7 @@ pumpkins
 
 ---
 
-    Harder (save this for if/when rust is working):
+    Harder (save these for if/when rust is working):
 
 * footsies
 * chess
