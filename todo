@@ -2,13 +2,25 @@
 guessing-game
 sokoban-c
 
-    now:
+    next:
 tron
+* UX design / feature requests from playtesters
+* optional, final polish (maybe not needed)
+    * paging, for smoothness?
 
     future:
 maze
 ghosts
 pumpkins
+
+---
+
+    NOW:
+
+[ ] finish up tron; aim to have it done over the weekend
+[ ] Easy 6502 tutorial
+Read this code: https://skilldrick.github.io/easy6502/simulator.html
+Then maybe adapt their snake game to run on the //e.
 
 ---
 
