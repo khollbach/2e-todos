@@ -71,7 +71,8 @@ Then maybe adapt their snake game to run on the //e.
 > This would require getting hi-res graphics working, and could be a cool
 > target project to motivate that.
 
-Audio recording on iPhone
+[x] Audio recording on iPhone
+* worked, using AudioShare app ($5 on App Store) and SABRENT USB External Stereo Sound Adapter ($10 on Amazon)
 
 C docs
 * flesh these out at some point
