@@ -17,7 +17,7 @@ pumpkins
 
     NOW:
 
-[ ] finish up tron; aim to have it done over the weekend
+[x] finish up tron; aim to have it done over the weekend
 [ ] Easy 6502 tutorial
 Read this code: https://skilldrick.github.io/easy6502/simulator.html
 Then maybe adapt their snake game to run on the //e.
@@ -58,6 +58,15 @@ Then maybe adapt their snake game to run on the //e.
 
     Misc:
 
+Physical floppies!
+
+Apple LOGO
+* Russ Webb offered to give me a lesson :)
+
+Tower of emulators ??
+* 6502 > SWEET16 > CHIP-8  (n2t in there somewhere?)
+  ^emulated?
+
 * stream images directly to the screen buffer over audio ??
     (think about this a bit; are there any cool ways to apply it?)
 > It's probably pretty slow, so it wouldn't be great for video.
@@ -78,9 +87,9 @@ C docs
 
 Floppy docs
 
-Physical floppies
-
-Apple LOGO ?
+Try using `zig -ofmt=c` and then compile with cc65 ?
+* well, cc65 is pretty limited, so there's a good chance this won't work out...
+* There are probably better ways to learn zig.
 
 ---
 
