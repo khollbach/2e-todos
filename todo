@@ -1,12 +1,9 @@
     done:
 guessing-game
 sokoban-c
+tron
 
     next:
-tron
-* UX design / feature requests from playtesters
-* optional, final polish (maybe not needed)
-    * paging, for smoothness?
 
     future:
 maze
