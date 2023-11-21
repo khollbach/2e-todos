@@ -62,10 +62,6 @@ Explore double hi res. Supposedly this gives us access to the full 16-color pale
 
     Misc:
 
-Tower of emulators ??
-* 6502 > SWEET16 > CHIP-8  (n2t in there somewhere?)
-  ^emulated?
-
 Physical floppies
 
 Apple LOGO
@@ -78,6 +74,8 @@ C docs
 
 Floppy docs
 
+Tower of emulators
+
 ---
 
     Projects:
@@ -86,9 +84,10 @@ Floppy docs
 guessing-game
 sokoban-c
 tron
+6502 demo program
 
     next:
-6502 demo program
+???
 
 ---
 
@@ -100,5 +99,11 @@ tron
     - The nice thing about this is it doesn't require any keyboard input
     - It does need randomness, but it's ok if the seed is the same every time.
 
-[ ] impl SWEET16 in 6502 ?
+6502 > SWEET16 > n2t > CHIP-8
+
+candidate order:
+0. rust > chip8
+1a. rust > n2t
+1b. sweet16 > n2t
+2. 6502 > sweet16
 
