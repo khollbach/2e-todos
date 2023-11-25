@@ -98,6 +98,7 @@ tron
 [x] Adapt the above demo to run on the Apple II
     - The nice thing about this is it doesn't require any keyboard input
     - It does need randomness, but it's ok if the seed is the same every time.
+[x] CHIP-8 interpreter
 
 6502 > SWEET16 > n2t > CHIP-8
 
