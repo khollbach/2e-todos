@@ -31,36 +31,9 @@
 
 ---
 
-    Hi-res stuff:
-
-6. Figure out how hi-res graphics work:
-* draw 0x00 thru 0xff tiling the screen, and see what it looks like.
-    * diversion: figure out how to configure the compiler
-      for a different load address (done!)
-7. double-hi-res ??
-8. Draw RC logo in hi res. On keypress toggle b/w white and green.
-9. Tile the screen with the Pac-Man ghost outline, to prove out single color hi res
-10. Display a 2-bit color still from a Pokémon game — might be harder and involve converting between image formats (could be a fun pairing project)
-11. Pumpkin game-of-life (could be good for pairing)
-
-Explore double hi res. Supposedly this gives us access to the full 16-color palette. (Q: does it change the number of distinct visible pixels, compared to normal hi res? Unclear so far, but sounds like yes? Except they mention a sliding(?) window which is odd…)
-
-* stream images directly to the screen buffer over audio ??
-    (think about this a bit; are there any cool ways to apply it?)
-> It's probably pretty slow, so it wouldn't be great for video.
-> I guess you could do like a slideshow or something...
-> (Maybe a simple visualizion of the data transfer speed?)
->
-> Riffing on the slideshow idea, it would be cool to have a program that
-> takes in a list of images, and draws them to the screen in sequence.
-> If we did that with a bunch of stills from an old nintendo game that
-> could be pretty nice.
-> This would require getting hi-res graphics working, and could be a cool
-> target project to motivate that.
-
----
-
     Misc:
+
+Look at how Cactus did CHIP-8 in Rust, for ideas & to compare.
 
 Physical floppies
 
@@ -80,18 +53,14 @@ Tower of emulators
 
     Projects:
 
-    done:
 guessing-game
 sokoban-c
 tron
 6502 demo program
 
-    next:
-???
-
 ---
 
-    NOW:
+    emu:
 
 [x] Easy 6502 tutorial
 [x] Read this code: https://skilldrick.github.io/easy6502/simulator.html
@@ -108,3 +77,35 @@ candidate order:
 1b. sweet16 > n2t
 2. 6502 > sweet16
 
+---
+
+    Hi-res stuff:
+
+At some point, come back to this video https://www.cs.columbia.edu/~sedwards/2020-vcfw-6502/ and re-watch from 19:30 onwards.
+
+Got stuck trying to repro the demo from https://www.1000bit.it/support/manuali/apple/technotes/aiie/tn.aiie.03.html (section: Using AUXMOVE)
+Things to look into:
+* is the code for AUXMOVE where it's supposed to be in memory? try dumping it
+* are we supplying the arguments correctly?
+Note: (their suggestion of 3^P<CR> is indeed helpful)
+
+This is a great image for testing (normal hi-res) rendering; taken from Karateka:
+https://i.pinimg.com/736x/f5/c3/95/f5c3950416d58744f6d92cb4b46f29e3.jpg
+
+1. Display RC logo in HGR (white on black)
+1.a. draw the same, but using green
+2. tile the screen w/ the pacman ghost outline (white)
+2.a. make the ghosts different colors
+3. draw pumpkin in HGR
+3.a. draw RC logo in "full color" -- white bg, black frame, green "text"
+4. try the ghost demo again, but with all 16 colors, using DHGR
+Note that some of these may need a different load address, or to leave a "gap".
+See cc65 examples/ for insp.
+5. Pumpkin game-of-life (could be good for pairing)
+6. Display a 2-bit color still from a Pokémon game — might be harder and involve converting between image formats (could be a fun pairing project)
+
+Figure out how hi-res graphics work...
+    UPDATE: I've made a lot of progress, but wow it's complicated
+Double-hi-res
+    (in some ways, simpler; but if you use the simple mental model, there's
+    certain to be artifacts in the images. I can live with that.)
