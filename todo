@@ -103,6 +103,7 @@ Note that some of these may need a different load address, or to leave a "gap".
 See cc65 examples/ for insp.
 5. Pumpkin game-of-life (could be good for pairing)
 6. Display a 2-bit color still from a Pokémon game — might be harder and involve converting between image formats (could be a fun pairing project)
+    * see photo of pen&paper notes on phone for ideas about the mapping
 
 Figure out how hi-res graphics work...
     UPDATE: I've made a lot of progress, but wow it's complicated
