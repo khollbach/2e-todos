@@ -92,6 +92,8 @@ Note: (their suggestion of 3^P<CR> is indeed helpful)
 This is a great image for testing (normal hi-res) rendering; taken from Karateka:
 https://i.pinimg.com/736x/f5/c3/95/f5c3950416d58744f6d92cb4b46f29e3.jpg
 
+The prince of persia title screen is DHGR iirc, so that'd be a great choice for testing double hires.
+
 1. Display RC logo in HGR (white on black)
 1.a. draw the same, but using green
 2. tile the screen w/ the pacman ghost outline (white)
@@ -110,3 +112,48 @@ Figure out how hi-res graphics work...
 Double-hi-res
     (in some ways, simpler; but if you use the simple mental model, there's
     certain to be artifacts in the images. I can live with that.)
+
+---
+
+    Floppies
+
+Motivation: both Russ and Julien said they'd be interested.
+End goal: get an Apple LOGO disk image written to a physical floppy disk.
+Then you can play around with the actual programming language!
+
+Steps:
+1. find and download a LOGO .dsk image
+2. test it on the //e emulator online, to verify
+3. read the ADTPro docs and figure out which path we need to take
+4. follow the steps in their tutorial, which probably involves
+4.a. bootstrapping a ProDOS disk
+4.b. using ProDOS(?) to transfer a disk image (LOGO) to another disk
+5. test it out, and celebrate when it works!
+
+Update: ok so it mostly works. We got the ADTPro client software disk image on
+a physical floppy, and we can use that to talk both ways with a laptop. (The
+usb to mic/speaker adapter works for this.) Using this setup, we got LOGO.dsk
+onto a physical floppy, and we can boot it up, and it works.
+However, when trying to write the sample-programs and docs disks, I had
+trouble: the ADTPro client would show an 'X' in the loading bar instead of a
+'W' when trying to write, and the disk drive made a weird sound. I'm not sure
+what the issue was, and there are lots of possible causes (Julien had lots of
+great ideas):
+* "write protection" on physical disks -- when the disk is facing up, there's a
+  hole punched out of it, but when it's facing down the hole is one the other
+  side. (There was also a disk at the hub that had been masking-taped over to
+  un-do the hole, which is interesting...)
+* copy-protection on the floppy images: they might have weird, unsupported
+  quirks in the data (e.g. bits set that never should be) or something to try
+  to prevent people from making copies of the disks.
+* (a mistake I *keep* making: forgetting to format the disk first. The file
+  xfer step in ADTPro does *not* format the disk first, so remember to do that
+  step!)
+* (hopefully not an issue with the drive? but it's certainly possible)
+There's lots of things it could be, so take a deliberate approach to debugging.
+First try to re-pro what already worked, and then make incremental changes and
+verify as you go.
+NOTE: The ADTPro disk and LOGO disk are successfully copied, but the back side
+of the LOGO disk (which should be the LOGO TOOLKIT iirc?) and both sides of the
+second disk (which should be LOGO SAMPLE PROGS and LOGO TK DOCS) aren't yet
+written, so the stickers on the disks aren't *yet* honest. (but hopefully soon)
