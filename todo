@@ -126,6 +126,16 @@ Pixel editor project is going great; we're very close to an HGR demo.
     * played around with HSL colorspace and got a tandy logo to show up, which was cool
 * possible future extension: DHGR
 
+More misc things to check out:
+* https://github.com/Michaelangel007/apple2_hgrbyte
+* http://wsxyz.net/tohgr.htmla
+* https://lukazi.blogspot.com/2017/03/double-high-resolution-graphics-dhgr.html
+* https://retrocomputing.stackexchange.com/questions/2595/does-every-retrocomputer-and-console-with-ntsc-composite-output-have-artifact-c
+* https://int10h.org/blog/2015/04/cga-in-1024-colors-new-mode-illustrated/
+* https://retrocomputing.stackexchange.com/questions/19509/apple-ii-double-buffering-and-double-high-resolution
+* https://nerdlypleasures.blogspot.com/2021/10/apple-ii-composite-artifact-color-ntsc.html
+* https://www.applefritter.com/content/wanted-schematic-good-color-killer-circuits-apple-ii
+
 ---
 
     Floppies
@@ -173,7 +183,7 @@ written, so the stickers on the disks aren't *yet* honest. (but hopefully soon)
 
 ---
 
-SIM-8800
+SIM-8800 -- https://pocorgtfo.hacke.rs/pocorgtfo20.pdf
 [x] read the rest of the article
 [ ] run their simulator on the //e
     * unzip the file
