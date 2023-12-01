@@ -82,6 +82,7 @@ candidate order:
     Hi-res stuff:
 
 At some point, come back to this video https://www.cs.columbia.edu/~sedwards/2020-vcfw-6502/ and re-watch from 19:30 onwards.
+^^ It could be really cool (and probably very low-effort) to get their demo running.
 
 Got stuck trying to repro the demo from https://www.1000bit.it/support/manuali/apple/technotes/aiie/tn.aiie.03.html (section: Using AUXMOVE)
 Things to look into:
@@ -93,6 +94,9 @@ This is a great image for testing (normal hi-res) rendering; taken from Karateka
 https://i.pinimg.com/736x/f5/c3/95/f5c3950416d58744f6d92cb4b46f29e3.jpg
 
 The prince of persia title screen is DHGR iirc, so that'd be a great choice for testing double hires.
+
+Misc thing:
+* recreate the Ness peace sign sprite on the //e (see DMs w/ Evan)
 
 1. Display RC logo in HGR (white on black)
 1.a. draw the same, but using green
@@ -112,6 +116,15 @@ Figure out how hi-res graphics work...
 Double-hi-res
     (in some ways, simpler; but if you use the simple mental model, there's
     certain to be artifacts in the images. I can live with that.)
+
+Pixel editor project is going great; we're very close to an HGR demo.
+* demo complete!
+  * we can draw things, and then have them show up on the screen
+  * we were also able to hardcode a black&white image file, and display that
+  * in progress: user-uploaded images
+    * tricky part: converting them into reasonable-looking black&white versions
+    * played around with HSL colorspace and got a tandy logo to show up, which was cool
+* possible future extension: DHGR
 
 ---
 
@@ -157,3 +170,28 @@ NOTE: The ADTPro disk and LOGO disk are successfully copied, but the back side
 of the LOGO disk (which should be the LOGO TOOLKIT iirc?) and both sides of the
 second disk (which should be LOGO SAMPLE PROGS and LOGO TK DOCS) aren't yet
 written, so the stickers on the disks aren't *yet* honest. (but hopefully soon)
+
+---
+
+SIM-8800
+[x] read the rest of the article
+[ ] run their simulator on the //e
+    * unzip the file
+    * try it in // jse
+    * run it for real
+    * maybe put it on a floppy?
+
+---
+
+n2t on Apple II
+* either via 6502, SWEET16, or C
+* need to adapt screen size
+    * there are probably a few different ways to do this...
+* ...?
+
+---
+
+SWEET16 learning:
+* see notes and bookmarks for left-off-here
+
+
