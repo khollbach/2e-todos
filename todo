@@ -35,11 +35,6 @@
 
 Look at how Cactus did CHIP-8 in Rust, for ideas & to compare.
 
-Physical floppies
-
-Apple LOGO
-* Russ Webb offered to give me a lesson :)
-
 C docs
 * flesh these out at some point
 * include example programs from 2e/c ?
