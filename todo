@@ -1,3 +1,12 @@
+    Projects:
+
+guessing-game
+sokoban-c
+tron
+6502 demo program
+
+---
+
     Game ideas:
 
 * 2048
@@ -28,108 +37,6 @@
 * snakes and ladders (credit Sergey)
 * Typeracer / some kind of typing test
 * battleships
-
----
-
-    Misc:
-
-Look at how Cactus did CHIP-8 in Rust, for ideas & to compare.
-
-C docs
-* flesh these out at some point
-* include example programs from 2e/c ?
-    * these are nice stepping stones / tutorials, in a way
-
-Floppy docs
-
-Tower of emulators
-
----
-
-    Projects:
-
-guessing-game
-sokoban-c
-tron
-6502 demo program
-
----
-
-    emu:
-
-[x] Easy 6502 tutorial
-[x] Read this code: https://skilldrick.github.io/easy6502/simulator.html
-[x] Adapt the above demo to run on the Apple II
-    - The nice thing about this is it doesn't require any keyboard input
-    - It does need randomness, but it's ok if the seed is the same every time.
-[x] CHIP-8 interpreter
-
-6502 > SWEET16 > n2t > CHIP-8
-
-candidate order:
-0. rust > chip8
-1a. rust > n2t
-1b. sweet16 > n2t
-2. 6502 > sweet16
-
----
-
-    Hi-res stuff:
-
-At some point, come back to this video https://www.cs.columbia.edu/~sedwards/2020-vcfw-6502/ and re-watch from 19:30 onwards.
-^^ It could be really cool (and probably very low-effort) to get their demo running.
-
-Got stuck trying to repro the demo from https://www.1000bit.it/support/manuali/apple/technotes/aiie/tn.aiie.03.html (section: Using AUXMOVE)
-Things to look into:
-* is the code for AUXMOVE where it's supposed to be in memory? try dumping it
-* are we supplying the arguments correctly?
-Note: (their suggestion of 3^P<CR> is indeed helpful)
-
-This is a great image for testing (normal hi-res) rendering; taken from Karateka:
-https://i.pinimg.com/736x/f5/c3/95/f5c3950416d58744f6d92cb4b46f29e3.jpg
-
-The prince of persia title screen is DHGR iirc, so that'd be a great choice for testing double hires.
-
-Misc thing:
-* recreate the Ness peace sign sprite on the //e (see DMs w/ Evan)
-
-1. Display RC logo in HGR (white on black)
-1.a. draw the same, but using green
-2. tile the screen w/ the pacman ghost outline (white)
-2.a. make the ghosts different colors
-3. draw pumpkin in HGR
-3.a. draw RC logo in "full color" -- white bg, black frame, green "text"
-4. try the ghost demo again, but with all 16 colors, using DHGR
-Note that some of these may need a different load address, or to leave a "gap".
-See cc65 examples/ for insp.
-5. Pumpkin game-of-life (could be good for pairing)
-6. Display a 2-bit color still from a Pokémon game — might be harder and involve converting between image formats (could be a fun pairing project)
-    * see photo of pen&paper notes on phone for ideas about the mapping
-
-Figure out how hi-res graphics work...
-    UPDATE: I've made a lot of progress, but wow it's complicated
-Double-hi-res
-    (in some ways, simpler; but if you use the simple mental model, there's
-    certain to be artifacts in the images. I can live with that.)
-
-Pixel editor project is going great; we're very close to an HGR demo.
-* demo complete!
-  * we can draw things, and then have them show up on the screen
-  * we were also able to hardcode a black&white image file, and display that
-  * in progress: user-uploaded images
-    * tricky part: converting them into reasonable-looking black&white versions
-    * played around with HSL colorspace and got a tandy logo to show up, which was cool
-* possible future extension: DHGR
-
-More misc things to check out:
-* https://github.com/Michaelangel007/apple2_hgrbyte
-* http://wsxyz.net/tohgr.htmla
-* https://lukazi.blogspot.com/2017/03/double-high-resolution-graphics-dhgr.html
-* https://retrocomputing.stackexchange.com/questions/2595/does-every-retrocomputer-and-console-with-ntsc-composite-output-have-artifact-c
-* https://int10h.org/blog/2015/04/cga-in-1024-colors-new-mode-illustrated/
-* https://retrocomputing.stackexchange.com/questions/19509/apple-ii-double-buffering-and-double-high-resolution
-* https://nerdlypleasures.blogspot.com/2021/10/apple-ii-composite-artifact-color-ntsc.html
-* https://www.applefritter.com/content/wanted-schematic-good-color-killer-circuits-apple-ii
 
 ---
 
@@ -178,6 +85,12 @@ written, so the stickers on the disks aren't *yet* honest. (but hopefully soon)
 
 ---
 
+    Misc stuff:
+
+Random thought: it'd be really cool to add cassette I/O support to //jse
+* how hard would this be?
+    (probably a pretty serious project...)
+
 SIM-8800 -- https://pocorgtfo.hacke.rs/pocorgtfo20.pdf
 [x] read the rest of the article
 [ ] run their simulator on the //e
@@ -186,17 +99,93 @@ SIM-8800 -- https://pocorgtfo.hacke.rs/pocorgtfo20.pdf
     * run it for real
     * maybe put it on a floppy?
 
+Look into PLASMA at some point, seems cool:
+    https://github.com/dschmenk/plasma
+
+---
+
+    Hi-res stuff:
+
+At some point, come back to this video https://www.cs.columbia.edu/~sedwards/2020-vcfw-6502/ and re-watch from 19:30 onwards.
+
+Got stuck trying to repro the demo from https://www.1000bit.it/support/manuali/apple/technotes/aiie/tn.aiie.03.html (section: Using AUXMOVE)
+Things to look into:
+* is the code for AUXMOVE where it's supposed to be in memory? try dumping it
+* are we supplying the arguments correctly?
+Note: (their suggestion of 3^P<CR> is indeed helpful)
+
+This is a great image for testing (normal hi-res) rendering; taken from Karateka:
+https://i.pinimg.com/736x/f5/c3/95/f5c3950416d58744f6d92cb4b46f29e3.jpg
+
+The prince of persia title screen is DHGR iirc, so that'd be a great choice for testing double hires.
+
+Misc thing:
+* recreate the Ness peace sign sprite on the //e (see DMs w/ Evan)
+
+Pixel editor project:
+* demo complete!
+  * we can draw things, and then have them show up on the screen
+  * we were also able to hardcode a black&white image file, and display that
+  * in progress: user-uploaded images
+    * tricky part: converting them into reasonable-looking black&white versions
+    * played around with HSL colorspace and got a tandy logo to show up, which was cool
+* possible future extension: DHGR
+
+More misc things to check out:
+* https://github.com/Michaelangel007/apple2_hgrbyte
+* http://wsxyz.net/tohgr.htmla
+* https://lukazi.blogspot.com/2017/03/double-high-resolution-graphics-dhgr.html
+* https://retrocomputing.stackexchange.com/questions/2595/does-every-retrocomputer-and-console-with-ntsc-composite-output-have-artifact-c
+* https://int10h.org/blog/2015/04/cga-in-1024-colors-new-mode-illustrated/
+* https://retrocomputing.stackexchange.com/questions/19509/apple-ii-double-buffering-and-double-high-resolution
+* https://nerdlypleasures.blogspot.com/2021/10/apple-ii-composite-artifact-color-ntsc.html
+* https://www.applefritter.com/content/wanted-schematic-good-color-killer-circuits-apple-ii
+
+1. Display RC logo in HGR (white on black)
+1.a. draw the same, but using green
+2. tile the screen w/ the pacman ghost outline (white)
+2.a. make the ghosts different colors
+3. draw pumpkin in HGR
+3.a. draw RC logo in "full color" -- white bg, black frame, green "text"
+4. try the ghost demo again, but with all 16 colors, using DHGR
+Note that some of these may need a different load address, or to leave a "gap".
+See cc65 examples/ for insp.
+5. Pumpkin game-of-life (could be good for pairing)
+6. Display a 2-bit color still from a Pokémon game — might be harder and involve converting between image formats (could be a fun pairing project)
+    * see photo of pen&paper notes on phone for ideas about the mapping
+    * also: I'm pretty sure black->purple->green->white would look really good
+
+---
+
+6502 > SWEET16 > n2t > CHIP-8
+
+[x] 0. rust > chip8
+[ ] 1. sweet16 > n2t
+[ ] 2. 6502 > sweet16
+
 ---
 
 n2t on Apple II
 * either via 6502, SWEET16, or C
+    * maybe even via translation from hack machine code to 6502 ?
+    * the n2t instruction memory is read-only, so this actually might work
 * need to adapt screen size
     * there are probably a few different ways to do this...
-* ...?
+    * simplest is just draw only even rows and cols; probably will look pretty good
+
+Also what about translating or emulating wasm or riscv or something? That could be neat, and maybe an avenue to get Rust running on the //e.
+* Or maybe an LLVM (or MLIR or w/e) backend -- is this a feasibly-sized project?
+
+Currently learning more 6502 / SWEET16
 
 ---
 
-SWEET16 learning:
-* see notes and bookmarks for left-off-here
+Other ideas
 
-
+Display color images / slideshow
+(2-bit color ???)
+(or normal HGR or DHGR)
+(either from OG images, or converting to closest match)
+n2t emulator / translator
+SIM-8800
+DHGR tutorial: AUXMOVE?
